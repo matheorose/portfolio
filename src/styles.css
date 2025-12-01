@@ -37,12 +37,16 @@ html {
   word-break: break-word;
 }
 
-.hero-typing .caret {
+.hero-typing .typed::after {
+  content: '';
   display: inline-block;
   width: 2px;
   height: 1em;
+  margin-left: 0.1em;
   background-color: currentColor;
   animation: blink 0.6s steps(1) infinite;
+  position: relative;
+  top: 0.08em;
 }
 
 @keyframes blink {

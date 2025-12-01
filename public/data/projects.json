@@ -4,8 +4,9 @@
     "date": "2024-2025",
     "image": "creepynight.webp",
     "shortDescription": "API de gestion d'un festival d'horreur",
-    "longDescription": "API permettant de gérer les réservations, les utilisateurs et les événements d'un festival d'horreur. Vue client, administarteur et prestataire avec tout un tas de fonctionnalité !",
-    "tags": ["Node.js", "Vue.js", "mySQL"]
+    "longDescription": "API permettant de gérer les réservations, les utilisateurs et les événements d'un festival d'horreur. Vue client, administrateur et prestataire avec tout un tas de fonctionnalités !",
+    "tags": ["Node.js", "Vue.js", "mySQL"],
+    "link": "https://github.com/Zuuret/SAE-S3-S4_Creepy_Night"
   },
   {
     "title": "Système Solaire",
@@ -13,7 +14,8 @@
     "image": "solar-system.png",
     "shortDescription": "Système solaire en 3 dimensions",
     "longDescription": "Système solaire en 3D réalisé avec la bibliothèque Three.js. Permet de naviguer autour des planètes et d'afficher des informations à leur sujet.",
-    "tags": ["Three.js", "JavaScript", "HTML", "CSS"]
+    "tags": ["Three.js", "JavaScript", "HTML", "CSS"],
+    "link": "https://github.com/matheorose/portfolio-3D"
   },
   {
     "title": "Galerie des projets",
@@ -21,7 +23,8 @@
     "image": "galerie.png",
     "shortDescription": "Galerie des projets informatiques",
     "longDescription": "Site web représentant une galerie d'art moderne, avec chaque œuvre représentant un projet informatique réalisé. Chaque œuvre est interactive et affiche des informations sur le projet lorsqu'on clique dessus.",
-    "tags": ["Vite"]
+    "tags": ["Vite"],
+    "link": "https://github.com/matheorose/galerie-matheo_rose"
   },
   {
     "title": "Cocolab",
@@ -29,14 +32,16 @@
     "image": "cocolab.png",
     "shortDescription": "Site vitrine d'une entreprise de développement",
     "longDescription": "Site vitrine pour une entreprise de développement web nommée Cocolab. Présente les services offerts, les projets réalisés et permet de contacter l'entreprise.",
-    "tags": ["Angular", "TypeScript", "Tailwind CSS"]
+    "tags": ["Angular", "TypeScript", "Tailwind CSS"],
+    "link": "https://github.com/matheorose/cocolab"
   },
   {
     "title": "Applications IOS",
     "date": "2024-2025",
-    "image": "",
+    "image": "xcode.jpg",
     "shortDescription": "Diverses applications IOS",
-    "longDescription": "Plusieurw applications IOS développées en Swift, incluant une application de triage des photos de son téléphone, une application de gestion de temps d'écran, une application météo (avec des données fictives).",
-    "tags": ["Swift", "Xcode"]
+    "longDescription": "Plusieurs applications IOS développées en Swift, incluant une application de triage des photos de son téléphone, une application de gestion de temps d'écran, une application météo (avec des données fictives), toutes disponibles sur mon github.",
+    "tags": ["Swift", "Xcode"],
+    "link": "https://github.com/matheorose/PhotoSwipe"
   }
 ]

@@ -19,16 +19,14 @@
       </nav>
 
       <div class="flex flex-1 flex-col justify-center gap-8">
-        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-fuchsia-300">Accueil</p>
         <div
           class="hero-typing text-4xl font-semibold leading-tight text-white md:text-5xl lg:text-6xl"
           aria-label="{{ heroFullText }}"
         >
           <span class="typed">{{ typedHeroText() }}</span>
-          <span class="caret" aria-hidden="true"></span>
         </div>
         <p class="max-w-2xl text-lg text-slate-300">
-          Des interfaces immersives, des API fiables et une obsession pour l’expérience utilisateur : je conçois des produits numériques qui font gagner du temps et suscitent l’adhésion.
+          J’aime concevoir des projets qui marient créativité et technologie. Que ce soit pour le web, l’IA ou des interfaces connectées, je cherche à construire des expériences élégantes, utiles et pensées avec soin, où chaque détail compte.
         </p>
         <div class="flex flex-wrap gap-4">
           <a
@@ -58,6 +56,16 @@
               <p>{{ paragraph }}</p>
             }
           </div>
+          <a
+            href="/CV-Matheo-ROSE.pdf"
+            download="CV-Matheo-ROSE.pdf"
+            class="mt-6 inline-flex items-center gap-2 rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white transition hover:border-white hover:bg-white/5"
+          >
+            Télécharger mon CV
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" class="h-4 w-4">
+              <path d="M10 3v10m0 0 3-3m-3 3-3-3M4 15h12" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
         </div>
         <div class="space-y-6">
           <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
@@ -121,12 +129,29 @@
                     <p class="mt-2 text-sm uppercase tracking-[0.3em] text-fuchsia-200">{{ project.shortDescription }}</p>
                   </div>
                   <p class="text-slate-300">{{ project.longDescription }}</p>
-                  @if (project.tags?.length) {
-                    <div class="mt-auto flex flex-wrap gap-2">
-                      @for (tag of project.tags!; track tag) {
-                        <span class="rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-slate-200">
-                          {{ tag }}
-                        </span>
+                  @if ((project.tags?.length ?? 0) > 0 || project.link) {
+                    <div class="mt-auto flex w-full flex-wrap items-center gap-3">
+                      @if (project.tags?.length) {
+                        <div class="flex flex-wrap gap-2">
+                          @for (tag of project.tags; track tag) {
+                            <span class="rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-slate-200">
+                              {{ tag }}
+                            </span>
+                          }
+                        </div>
+                      }
+                      @if (project.link) {
+                        <a
+                          class="ml-auto inline-flex items-center gap-2 rounded-full border border-white/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:border-white/40"
+                          [href]="project.link"
+                          target="_blank"
+                          rel="noopener"
+                        >
+                          GitHub
+                          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" class="h-4 w-4">
+                            <path d="M5 15a7.5 7.5 0 1 1 10 0v3l-2.5-1.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                        </a>
                       }
                     </div>
                   }
@@ -146,7 +171,7 @@
     <section id="experiences" class="bg-slate-900/80 mb-0">
       <div class="mx-auto max-w-4xl px-6 py-16 space-y-10">
         <div class="space-y-4">
-          <h2 class="mt-2 text-3xl font-semibold md:text-4xl text-fuchsia-300">Expériences professionnelles</h2>
+          <h2 class="mt-2 text-3xl font-semibold md:text-4xl text-fuchsia-300">Expérience professionnelle</h2>
         </div>
 
         @if (isLoadingExperiences()) {

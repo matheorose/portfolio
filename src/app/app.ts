@@ -11,6 +11,7 @@ type Project = {
   shortDescription: string;
   longDescription: string;
   tags?: string[];
+  link?: string;
 };
 
 type Experience = {
@@ -55,9 +56,8 @@ export class App implements OnDestroy {
     { label: 'Contact', href: '#contact' }
   ];
   protected readonly socialLinks = [
-    { label: 'GitHub', url: 'https://github.com/', icon: 'github' },
-    { label: 'LinkedIn', url: 'https://www.linkedin.com/', icon: 'linkedin' },
-    { label: 'X', url: 'https://twitter.com/', icon: 'twitter' }
+    { label: 'GitHub', url: 'https://github.com/matheorose', icon: 'github' },
+    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/math%C3%A9o-rose-60556b341/', icon: 'linkedin' },
   ];
   protected readonly currentYear = new Date().getFullYear();
 
