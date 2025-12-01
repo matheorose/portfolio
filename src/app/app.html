@@ -1,0 +1,272 @@
+<div class="min-h-screen bg-slate-950 text-slate-100">
+  <header class="relative isolate overflow-hidden bg-gradient-to-b from-slate-900 via-slate-950 to-black">
+    <div class="absolute inset-0 -z-10 opacity-60" aria-hidden="true">
+      <div class="h-full bg-[radial-gradient(circle_at_top,_rgba(120,119,198,0.45),transparent_55%)]"></div>
+    </div>
+    <div class="mx-auto max-w-6xl px-6 py-10 lg:py-16">
+      <nav class="flex flex-wrap items-center justify-between gap-6 text-sm text-slate-300">
+        <div class="flex items-center gap-3 text-lg font-semibold tracking-tight text-white">
+          <span class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 font-bold">MR</span>
+          Mathéo Rose
+        </div>
+        <div class="flex flex-wrap gap-4">
+          @for (link of navLinks; track link.label) {
+            <a [href]="link.href" class="text-sm font-medium text-slate-300 transition hover:text-white">
+              {{ link.label }}
+            </a>
+          }
+        </div>
+      </nav>
+
+      <div class="mt-12 grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-[0.3em] text-fuchsia-300">Disponible pour de nouveaux défis</p>
+          <h1 class="mt-6 text-4xl font-semibold leading-tight text-white-300 md:text-5xl lg:text-6xl">
+            Mathéo Rose<br />Développeur polyvalent
+          </h1>
+          <p class="mt-6 text-lg text-slate-300">
+            Je construis des expériences numériques élégantes, accessibles et performantes pour des équipes ambitieuses.
+            Tailwind, Angular et les APIs modernes sont mes terrains de jeu favoris.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a
+              href="#projects"
+              class="inline-flex items-center justify-center rounded-full bg-fuchsia-500 px-6 py-3 font-semibold text-white shadow-lg shadow-fuchsia-500/40 transition hover:scale-[1.01]"
+            >
+              Voir mes projets
+            </a>
+            <a
+              href="#contact"
+              class="inline-flex items-center justify-center rounded-full border border-white/30 px-6 py-3 font-semibold text-white hover:border-white"
+            >
+              Discutons ensemble
+            </a>
+          </div>
+
+          <dl class="mt-10 grid gap-6 text-sm text-slate-300 sm:grid-cols-3">
+            @for (item of expertise; track item) {
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur">
+                <dt class="text-xs uppercase tracking-[0.3em] text-fuchsia-200">Expertise</dt>
+                <dd class="mt-2 text-base font-semibold text-white">{{ item }}</dd>
+              </div>
+            }
+          </dl>
+        </div>
+
+        <div class="relative">
+          <div class="rounded-[32px] border border-white/10 bg-gradient-to-br from-slate-800 to-slate-900/80 p-8 shadow-2xl">
+            <p class="text-sm uppercase tracking-[0.4em] text-slate-400">Stack favorite</p>
+            <ul class="mt-6 space-y-4 text-lg font-semibold">
+              <li class="flex items-center justify-between text-white">
+                Angular
+                <span class="text-sm font-normal text-slate-400">10+ projets</span>
+              </li>
+              <li class="flex items-center justify-between text-white">
+                Tailwind CSS
+                <span class="text-sm font-normal text-slate-400">Design systems</span>
+              </li>
+              <li class="flex items-center justify-between text-white">
+                Node & APIs
+                <span class="text-sm font-normal text-slate-400">Architecture cloud</span>
+              </li>
+            </ul>
+            <div class="mt-10 rounded-2xl border border-white/5 bg-black/30 p-5 text-sm text-slate-300">
+              <p class="font-semibold text-white">Missions idéales</p>
+              <p class="mt-2">
+                Produit SaaS B2B, équipes design-dev soudées et envie d'expérimenter des features alimentées par l'IA.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="space-y-20 pb-20">
+    <section id="projects" class="bg-slate-950">
+      <div class="mx-auto max-w-6xl px-6 py-16">
+        <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div>
+            <h2 class="mt-2 text-3xl font-semibold md:text-4xl text-fuchsia-300">Projets marquants</h2>
+            <p class="mt-4 max-w-2xl text-slate-300">
+              Projets réalisés lors de ces 3 années d'expérience en tant que développeur fullstack.
+            </p>
+          </div>
+          <div class="flex gap-4 text-sm text-slate-400">
+            <span class="rounded-full border border-white/10 px-4 py-2">{{ projects().length }} projets</span>
+          </div>
+        </div>
+
+        @if (isLoadingProjects()) {
+          <div class="mt-12 grid gap-6 md:grid-cols-2">
+            @for (skeleton of [1, 2, 3, 4]; track skeleton) {
+              <div class="animate-pulse rounded-3xl border border-white/5 bg-white/5 p-8">
+                <div class="h-48 rounded-2xl bg-white/10"></div>
+                <div class="mt-6 space-y-3">
+                  <div class="h-4 w-1/2 rounded bg-white/10"></div>
+                  <div class="h-6 w-3/4 rounded bg-white/20"></div>
+                  <div class="h-4 w-full rounded bg-white/10"></div>
+                </div>
+              </div>
+            }
+          </div>
+        } @else {
+          <div class="mt-12 grid gap-8 md:grid-cols-2">
+            @for (project of projects(); track project.title) {
+              <article class="group flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-[0_25px_70px_rgba(15,23,42,0.45)]">
+                <div class="relative h-56 overflow-hidden">
+                  <img [src]="project.image" [alt]="project.title" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+                  <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/60"></div>
+                  <p class="absolute bottom-4 left-4 rounded-full bg-black/60 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-white">
+                    {{ formatProjectDate(project.date) }}
+                  </p>
+                </div>
+                <div class="flex flex-1 flex-col gap-4 p-8">
+                  <div>
+                    <h3 class="text-2xl font-semibold text-white">{{ project.title }}</h3>
+                    <p class="mt-2 text-sm uppercase tracking-[0.3em] text-fuchsia-200">{{ project.shortDescription }}</p>
+                  </div>
+                  <p class="text-slate-300">{{ project.longDescription }}</p>
+                  @if (project.tags?.length) {
+                    <div class="mt-auto flex flex-wrap gap-2">
+                      @for (tag of project.tags!; track tag) {
+                        <span class="rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-slate-200">
+                          {{ tag }}
+                        </span>
+                      }
+                    </div>
+                  }
+                </div>
+              </article>
+            }
+          </div>
+          @if (errorLoadingProjects()) {
+            <p class="mt-6 rounded-2xl border border-red-500/40 bg-red-500/10 px-4 py-3 text-sm text-red-200">
+              Impossible de charger les projets. Vérifiez le fichier JSON et rechargez la page.
+            </p>
+          }
+        }
+      </div>
+    </section>
+
+    <section id="about" class="bg-slate-900/60">
+      <div class="mx-auto grid max-w-5xl gap-12 px-6 py-16 lg:grid-cols-2">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-[0.4em] text-fuchsia-300">À propos</p>
+          <h2 class="mt-3 text-3xl font-semibold text-white">Créer du sens à travers le code</h2>
+          <div class="mt-6 space-y-4 text-slate-300">
+            @for (paragraph of aboutParagraphs; track paragraph) {
+              <p>{{ paragraph }}</p>
+            }
+          </div>
+        </div>
+        <div class="space-y-6">
+          <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+            <p class="text-sm font-semibold uppercase tracking-[0.4em] text-fuchsia-200">Ce que je recherche</p>
+            <p class="mt-4 text-slate-200">
+              Des collaborations humaines où produit, design et tech avancent main dans la main. Remplacez ce texte avec vos propres ambitions.
+            </p>
+          </div>
+          <div class="rounded-3xl border border-white/10 bg-gradient-to-r from-fuchsia-500/90 to-indigo-600/90 p-6 text-white">
+            <p class="text-sm font-semibold uppercase tracking-[0.4em]">Mission idéale</p>
+            <p class="mt-3">
+              Une équipe produit qui souhaite accélérer, prototyper rapidement et livrer des expériences raffinées. Je peux rejoindre en freelance ou en CDI.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="bg-slate-950">
+      <div class="mx-auto grid max-w-5xl gap-12 px-6 py-16 lg:grid-cols-[1fr_1fr]">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-[0.4em] text-fuchsia-300">Contact</p>
+          <h2 class="mt-3 text-3xl font-semibold text-white">Parlons de votre projet</h2>
+          <p class="mt-4 text-slate-300">
+            Remplissez le formulaire et je reviens vers vous sous 24h. Vous pouvez aussi me joindre via mes réseaux sociaux.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3 text-sm text-slate-300">
+            @for (link of socialLinks; track link.label) {
+              <a
+                class="rounded-full border border-white/20 px-4 py-2 transition hover:border-white hover:text-white"
+                [href]="link.url"
+                target="_blank"
+                rel="noopener"
+              >
+                {{ link.label }}
+              </a>
+            }
+          </div>
+        </div>
+
+        <form
+          class="space-y-6 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur"
+          [formGroup]="contactForm"
+          (ngSubmit)="submitContact()"
+        >
+          <div>
+            <label class="text-sm font-semibold text-white" for="name">Nom</label>
+            <input
+              id="name"
+              type="text"
+              class="mt-2 w-full rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-white placeholder:text-slate-500 focus:border-fuchsia-400 focus:outline-none"
+              placeholder="Votre nom"
+              formControlName="name"
+            />
+            @if (contactForm.controls.name.invalid && contactForm.controls.name.touched) {
+              <p class="mt-2 text-sm text-red-300">Merci d’indiquer votre nom.</p>
+            }
+          </div>
+
+          <div>
+            <label class="text-sm font-semibold text-white" for="email">Email</label>
+            <input
+              id="email"
+              type="email"
+              class="mt-2 w-full rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-white placeholder:text-slate-500 focus:border-fuchsia-400 focus:outline-none"
+              placeholder="nom@entreprise.com"
+              formControlName="email"
+            />
+            @if (contactForm.controls.email.invalid && contactForm.controls.email.touched) {
+              <p class="mt-2 text-sm text-red-300">Un email valide est requis.</p>
+            }
+          </div>
+
+          <div>
+            <label class="text-sm font-semibold text-white" for="message">Message</label>
+            <textarea
+              id="message"
+              rows="4"
+              class="mt-2 w-full rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-white placeholder:text-slate-500 focus:border-fuchsia-400 focus:outline-none"
+              placeholder="Parlez-moi de votre besoin, de vos objectifs, des délais…"
+              formControlName="message"
+            ></textarea>
+            @if (contactForm.controls.message.invalid && contactForm.controls.message.touched) {
+              <p class="mt-2 text-sm text-red-300">Décrivez votre projet en quelques phrases.</p>
+            }
+          </div>
+
+          <button
+            type="submit"
+            class="w-full rounded-2xl bg-fuchsia-500 px-6 py-3 text-lg font-semibold text-white shadow-lg shadow-fuchsia-500/40 transition hover:scale-[1.01] disabled:cursor-not-allowed disabled:opacity-50"
+            [disabled]="contactForm.invalid"
+          >
+            Envoyer le message
+          </button>
+
+          @if (contactStatus()) {
+            <p class="rounded-2xl border border-emerald-400/30 bg-emerald-400/10 px-4 py-3 text-sm text-emerald-200">
+              {{ contactStatus() }}
+            </p>
+          }
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 bg-black/60">
+    <div class="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-8 text-sm text-slate-400 md:flex-row md:items-center md:justify-between">
+      <p>© {{ currentYear }} Mathéo Rose — Portfolio.</p>
+    </div>
+  </footer>
+</div>
