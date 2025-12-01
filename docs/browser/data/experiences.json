@@ -1,0 +1,24 @@
+[
+  {
+    "title": "Multi-agent IA",
+    "shortDescription": "Système de multi-agents IA développé grâce à Langchain - C4rbon Group",
+    "longDescription": "Système de multi-agents IA développé avec Langchain afin d'automatiser des tâches redondantes pour une entreprise, tel que l'ajout d'informations de clients sur dolibarr, l'envoi de mails, la programmation avec un agent codeur autonome capable de générer du code et de se corriger, ou encore la gestion de son gitlab.",
+    "image": "agentcodeur.png"
+  },
+  {
+    "title": "3D Builder",
+    "shortDescription": "Site de création de maison en 3 dimensions - C4rbon Group",
+    "longDescription": "Application web de création de maison en 3D, permettant aux utilisateurs de concevoir leur plan de maison, de visualiser le rendu et de voir le coût de celle-ci en fonction des éléments choisis.",
+    "image": "3dbuilder.png"
+  },
+  {
+    "title": "Tracker",
+    "shortDescription": "Tracker de puce Lora - C4rbon Group",
+    "longDescription": "API de tracking de puces Lora, permettant de récupérer les données de localisation et de températures des puces et d'afficher ces données sur une interface web."
+  },
+  {
+    "title": "IsiGesco",
+    "shortDescription": "Maintenance d'un ERP pour les experts-comptables - IsiConcept Informatique",
+    "longDescription": "Maintenance et développement de nouvelles fonctionnalités d'un ERP utilisé par les experts-comptables durant 3 mois."
+  }
+]

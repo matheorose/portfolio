@@ -49,6 +49,10 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+            },
+            "githubPages": {
+              "outputPath": "docs",
+              "baseHref": "/portfolio/"
             }
           },
           "defaultConfiguration": "production"
