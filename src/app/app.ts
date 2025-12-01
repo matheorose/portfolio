@@ -39,9 +39,10 @@ export class App {
   protected readonly isLoadingExperiences = signal(true);
   protected readonly errorLoadingExperiences = signal(false);
   protected readonly aboutParagraphs = [
-    'Développeur full-stack passionné, je crée des expériences web rapides, accessibles et centrées sur l’utilisateur.',
-    'J’adore transformer des idées complexes en interfaces élégantes et fluides, tout en gardant une base de code maintenable.',
-    'Toujours curieux, je suis en veille constante sur les meilleures pratiques front-end et cloud pour booster les produits que je construis.'
+    'Je m’appelle Mathéo, développeur passionné par la création d’expériences digitales modernes et utiles.',
+    'J’accorde une attention particulière au détail, à la fluidité et à la qualité technique : j’aime que chaque projet soit propre, cohérent et agréable à utiliser.',
+    'Je suis curieux, motivé et toujours prêt à explorer de nouvelles idées ou technologies.',
+    'Au fil des projets, j’ai développé une approche simple : comprendre, concevoir, améliorer… et continuer d’apprendre.',
   ];
   protected readonly expertise = [
     'Applications web scalables',
