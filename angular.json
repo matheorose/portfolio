@@ -51,7 +51,10 @@
               "sourceMap": true
             },
             "githubPages": {
-              "outputPath": "docs",
+              "outputPath": {
+                "base": "docs",
+                "browser": ""
+              },
               "baseHref": "/portfolio/"
             }
           },
