@@ -12,6 +12,13 @@ type Project = {
   tags?: string[];
 };
 
+type Experience = {
+  title: string;
+  shortDescription: string;
+  longDescription: string;
+  image?: string;
+};
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -28,6 +35,9 @@ export class App {
   protected readonly projects = signal<Project[]>([]);
   protected readonly isLoadingProjects = signal(true);
   protected readonly errorLoadingProjects = signal(false);
+  protected readonly experiences = signal<Experience[]>([]);
+  protected readonly isLoadingExperiences = signal(true);
+  protected readonly errorLoadingExperiences = signal(false);
   protected readonly aboutParagraphs = [
     'Développeur full-stack passionné, je crée des expériences web rapides, accessibles et centrées sur l’utilisateur.',
     'J’adore transformer des idées complexes en interfaces élégantes et fluides, tout en gardant une base de code maintenable.',
@@ -40,6 +50,7 @@ export class App {
   ];
   protected readonly navLinks = [
     { label: 'Projets', href: '#projects' },
+    { label: 'Expériences', href: '#experiences' },
     { label: 'À propos', href: '#about' },
     { label: 'Contact', href: '#contact' }
   ];
@@ -59,6 +70,7 @@ export class App {
 
   constructor() {
     this.loadProjects();
+    this.loadExperiences();
   }
 
   protected submitContact(): void {
@@ -84,6 +96,21 @@ export class App {
       error: () => {
         this.errorLoadingProjects.set(true);
         this.isLoadingProjects.set(false);
+      }
+    });
+  }
+
+  private loadExperiences(): void {
+    this.isLoadingExperiences.set(true);
+    this.http.get<Experience[]>('data/experiences.json').subscribe({
+      next: (experiences) => {
+        this.experiences.set(experiences);
+        this.errorLoadingExperiences.set(false);
+        this.isLoadingExperiences.set(false);
+      },
+      error: () => {
+        this.errorLoadingExperiences.set(true);
+        this.isLoadingExperiences.set(false);
       }
     });
   }
