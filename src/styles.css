@@ -1,3 +1,75 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Dark emerald foundations */
+    --color-slate-900: #064134;
+    --color-slate-950: #021f19;
+    --color-black: #010b09;
+
+    /* Gold accents replacing fuchsia */
+    --color-fuchsia-200: #fdf3c7;
+    --color-fuchsia-300: #f9e17a;
+    --color-fuchsia-400: #f2c94c;
+    --color-fuchsia-500: #d9a521;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.hero-typing {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.15em 0.3ch;
+  font-family: 'Space Mono', 'IBM Plex Mono', 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  white-space: normal;
+  overflow: visible;
+}
+
+.hero-typing .typed {
+  display: inline;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.hero-typing .caret {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background-color: currentColor;
+  animation: blink 0.6s steps(1) infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.scroll-reveal-hidden,
+.scroll-reveal-visible {
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.scroll-reveal-hidden {
+  opacity: 0;
+  transform: translateY(80px) scale(0.98);
+}
+
+.scroll-reveal-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
